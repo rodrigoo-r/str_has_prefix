@@ -12,6 +12,40 @@
 #ifndef FLUENT_LIBC_STR_HAS_PREFIX_LIBRARY_H
 #define FLUENT_LIBC_STR_HAS_PREFIX_LIBRARY_H
 
+// ============= FLUENT LIB C =============
 
+// ============= INCLUDES =============
+#ifndef FLUENT_LIBC_RELEASE
+#    include <types.h> // fluent_libc
+#    include <std_bool.h> // fluent_libc
+#else
+#    include <fluent/types/types.h> // fluent_libc
+#    include <fluent/std_bool/std_bool.h> // fluent_libc
+#endif
+
+static inline bool str_has_prefix(
+    const char *str,
+    const char *prefix
+)
+{
+    // Check if the string or prefix is NULL
+    if (!str || !prefix)
+    {
+        return FALSE; // Return false if either is NULL
+    }
+
+    // Iterate over the characters of the prefix
+    for (size_t i = 0; prefix[i] != '\0'; i++)
+    {
+        // If the current character in the string does not match the prefix
+        if (str[i] != prefix[i])
+        {
+            return FALSE; // Return false
+        }
+    }
+
+    // If we reached here, the prefix matches the start of the string
+    return TRUE; // Return true
+}
 
 #endif //FLUENT_LIBC_STR_HAS_PREFIX_LIBRARY_H
