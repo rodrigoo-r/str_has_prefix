@@ -13,6 +13,33 @@
 #define FLUENT_LIBC_STR_HAS_PREFIX_LIBRARY_H
 
 // ============= FLUENT LIB C =============
+// String Prefix Check Utility
+// ----------------------------------------
+// Provides a fast, zero-allocation function to check if a string starts with a prefix.
+//
+// API:
+//   • str_has_prefix(str, prefix) – returns TRUE if `str` starts with `prefix`, else FALSE.
+//
+// Notes:
+//   - NULL inputs return FALSE (safe to call with unchecked strings).
+//   - Comparison is byte-wise and case-sensitive.
+//
+// Performance:
+//   - O(n) where n = length of prefix.
+//   - Early-exit on first mismatch (no memory allocation).
+//
+// Dependencies:
+//   - `types.h` and `std_bool.h` from Fluent Lib C (for `bool` and `TRUE`/`FALSE`).
+//
+// Example:
+// ----------------------------------------
+//   if (str_has_prefix("https://example.com", "https://")) {
+//       printf("It's secure\n");
+//   }
+//
+//   if (!str_has_prefix(input, "--")) {
+//       puts("Expected flag prefix '--' not found");
+//   }
 
 // ============= INCLUDES =============
 #ifndef FLUENT_LIBC_RELEASE
