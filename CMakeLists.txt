@@ -5,7 +5,7 @@ project(str_has_prefix C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(str_has_prefix STATIC library.c)
+add_library(str_has_prefix STATIC str_has_prefix.h str_has_prefix.c)
 
 if(NOT FLUENT_LIBC_RELEASE) # Manually add libraries only if not in release mode
     FetchContent_Declare(
