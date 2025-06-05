@@ -1,0 +1,6 @@
+#ifndef STR_STARTS_WITH_LIBRARY_H
+#define STR_STARTS_WITH_LIBRARY_H
+
+void hello(void);
+
+#endif //STR_STARTS_WITH_LIBRARY_H
