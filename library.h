@@ -18,7 +18,7 @@
 // Provides a fast, zero-allocation function to check if a string starts with a prefix.
 //
 // API:
-//   • str_has_prefix(str, prefix) – returns TRUE if `str` starts with `prefix`, else FALSE.
+//   - str_has_prefix(str, prefix) – returns TRUE if `str` starts with `prefix`, else FALSE.
 //
 // Notes:
 //   - NULL inputs return FALSE (safe to call with unchecked strings).
