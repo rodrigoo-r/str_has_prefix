@@ -2,7 +2,7 @@ include(FetchContent)
 
 cmake_minimum_required(VERSION 3.12)
 project(str_has_prefix C)
-z
+
 set(CMAKE_C_STANDARD 11)
 
 add_library(str_has_prefix STATIC str_has_prefix.h str_has_prefix.c)
